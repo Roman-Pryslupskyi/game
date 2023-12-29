@@ -2,10 +2,10 @@ const HOLE_HEIGHT = 400
 const PIPE_WIDTH = 120
 const PIPE_INTERVAL = 1000
 const PIPE_SPEED = 0.3
+
 let pipes = []
 let timeSinceLastPipe
 let passedPipeCount
-
 let level
 
 export function setupPipes() {

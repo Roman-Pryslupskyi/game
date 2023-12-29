@@ -30,7 +30,7 @@ body {
   --bird-top: -1000;
   --bird-size: 60px;
   position: absolute;
-  background-color: hsl(50, 75%, 50%);
+  background-color: hsl(128, 99%, 32%);
   width: var(--bird-size);
   height: var(--bird-size);
   left: var(--bird-size);
@@ -49,7 +49,7 @@ body {
 .pipe > .segment {
   position: absolute;
   width: 100%;
-  background-color: hsl(100, 75%, 50%);
+  background-color: hsl(109, 16%, 47%);
 }
 
 .pipe > .top {
@@ -60,4 +60,9 @@ body {
 .pipe > .bottom {
   bottom: 0;
   top: calc(100vh - (var(--hole-top) * 1px) + calc(var(--hole-height) * 1px));
+}
+
+.label {
+  z-index: 1000;
+  position: absolute;
 }

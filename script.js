@@ -1,15 +1,10 @@
 import { updateBird, setupBird, getBirdRect } from "./bird.js"
-import {
-  updatePipes,
-  setupPipes,
-  getPassedPipesCount,
-  getPipeRects,
-  getLevel,
-} from "./pipe.js"
+import { updatePipes, setupPipes, getPassedPipesCount, getPipeRects, getLevel } from "./pipe.js"
 
 document.addEventListener("keypress", handleStart, { once: true })
 const title = document.querySelector("[data-title]")
 const subtitle = document.querySelector("[data-subtitle]")
+const levelLabel = document.getElementById("level")
 
 let lastTime
 function updateLoop(time) {
@@ -19,12 +14,10 @@ function updateLoop(time) {
     return
   }
   const delta = time - lastTime
-
   updateBird(delta)
   updatePipes(delta)
-  const score = getPassedPipesCount()
-  document.getElementById("level").textContent = `Level: ${getLevel()}`
-  document.getElementById("score").textContent = `Pipes: ${score}`
+
+  levelLabel.textContent = `Level: ${getLevel()} Pipes: ${getPassedPipesCount()}`
 
   if (checkLose()) return handleLose()
   lastTime = time
